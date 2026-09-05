@@ -7,7 +7,7 @@ Date: 2026-09-05
 ## Verdict
 
 **Start with timber.bid for Stripe Connect and payments MCP.**  
-**Treat renat.ai as a separate product: productivity MCPs + optional standard Stripe Billing — not Connect.**
+**renat.ai is your Personal OS** (companies + lifestyle) — see [`renat-ai-os-brief.md`](./renat-ai-os-brief.md). It orchestrates ventures; it is not Connect.
 
 ---
 
