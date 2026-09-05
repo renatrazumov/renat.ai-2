@@ -9,8 +9,11 @@ Private AI command center for Renat Razumov’s companies, businesses, and desig
 | Doc | Purpose |
 | --- | --- |
 | [`renat-ai-os-brief.md`](./renat-ai-os-brief.md) | **What renat.ai should be** — architecture, lifestyle loop, phased build |
+| [`renat-ai-security-legal-review.md`](./renat-ai-security-legal-review.md) | Performance, security, legal + **data access matrix** + template sales |
 | [`renat-company-mcp-plan.md`](./renat-company-mcp-plan.md) | Company map + MCP auth + rollout across timber.bid, razu.mov, etc. |
 | [`connect-recommend-plan.md`](./connect-recommend-plan.md) | Stripe Connect recommendation for **timber.bid** |
+
+**Doctrine:** own your vault keys. Always label who has access and what is public.
 
 ## Legacy scaffold note
 

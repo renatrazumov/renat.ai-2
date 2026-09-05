@@ -3,13 +3,15 @@
 **Owner:** Renat Razumov  
 **Intent:** Use [renat.ai](https://renat.ai) as your private AI that runs companies, businesses, and lifestyle — a **designer lifestyle OS**, not a public chat demo.  
 **Date:** 2026-09-05  
-**Related:** [`renat-company-mcp-plan.md`](./renat-company-mcp-plan.md) · [`connect-recommend-plan.md`](./connect-recommend-plan.md)
+**Related:** [`renat-company-mcp-plan.md`](./renat-company-mcp-plan.md) · [`connect-recommend-plan.md`](./connect-recommend-plan.md) · [`renat-ai-security-legal-review.md`](./renat-ai-security-legal-review.md)
+
+**Data doctrine:** If you do not own your data, you will inevitably give it away. Every surface must label **who can access data** and **what is public**.
 
 ---
 
 ## Verdict
 
-**renat.ai should become Renat OS: a single-operator command center.**  
+**renat.ai should become Renat OS: a single-operator command center**, then a **sellable Designer Lifestyle template** with an encrypted private vault (customer-held keys).  
 Chat is the interface. Memory + company contexts + tools + approval-gated agents are the product.  
 Each company stays its own product (timber.bid Connect, razu.mov Checkout, etc.). renat.ai **orchestrates** them — it does not replace their apps or Stripe platforms.
 
