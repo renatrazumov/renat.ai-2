@@ -17,11 +17,19 @@ Date: 2026-09-05
 | --- | --- | --- | --- |
 | **timber.bid** | Marketplace (firewood, tree services) + Pro SaaS | **Stripe Connect** (hold until delivery) + platform Billing for Pro | **P0 — start here** |
 | **renat.ai** | AGI / chat assistant (this repo) | Standard Stripe if you monetize; no multi-party Connect | **P1 — MCP + product, not Connect** |
+| **razu.mov** | Elite performance & leadership coaching (Providence, RI) | Standard Checkout / Payment Links / Billing for packages — **not Connect** | **P1 — coaching revenue** |
+| **renatrazumov.com** | Personal brand hub (ventures + “Book a Consultation” + Limitless Alignment waitlist) | Usually no Connect; link-outs + simple Checkout/calendar booking | **P2 — hub / funnel** |
 | **Flowstake.com** | Fitness stake / prediction-style | Crypto + possibly fiat rails later | P2 |
 | **DevStudio.Pro** | Agency / services | Invoices / Checkout (standard Stripe) | P2 |
 | **CustomComputer.io** | Hardware retail | Standard Checkout | P3 |
 | **RoomMining.io** | Mining infra | Hardware / deposits — standard Stripe or wire | P3 |
-| **Razu.mov / MasterMindRoom** | Coaching / events | Checkout or Payment Links | P3 |
+| **MasterMindRoom.org** | Mastermind / networking events | Checkout or Payment Links | P3 |
+
+### Notes on the two personal domains
+
+**[razu.mov](https://razu.mov)** — Coaching brand (“Elite Performance & Leadership Coaching”). Schema lists ProfessionalService in Providence, RI; contact `rrazumov@gmail.com`. Money flow is **you → client** (sessions, retainers, programs). Use **standard Stripe** (Payment Links, Checkout, or Billing). No connected accounts unless you later pay affiliate coaches.
+
+**[renatrazumov.com](https://renatrazumov.com)** — Founder portfolio: Flowstake, Timber.bid, DevStudio.Pro, CustomComputer.io, Limitless Alignment waitlist, “Book a Consultation.” Treat as the **top-of-funnel hub**, not a payment platform. Best pattern: calendar booking + optional deposit Checkout, with CTAs into timber.bid / razu.mov / Flowstake. MCP fit: Google Calendar + Gmail for consults; Stripe only if deposits live on this domain.
 
 ---
 
@@ -82,15 +90,37 @@ Netlify note: if you add AI server routes on Netlify, prefer Netlify AI Gateway 
 
 ---
 
+## Best plan for razu.mov (P1)
+
+Elite coaching site — **you are the merchant**, clients pay you. No Connect.
+
+1. Stripe Payment Links or Checkout for session packages / retainers / Limitless Alignment.
+2. Google Calendar + Gmail MCP for booking and follow-up (same Google auth as renat.ai ops).
+3. Optional: Stripe Billing if you sell monthly coaching memberships.
+4. Keep branding on razu.mov; funnel “Book a Consultation” from renatrazumov.com here or to Calendar.
+
+## Best plan for renatrazumov.com (P2)
+
+Personal hub — **not a payment platform**.
+
+1. CTAs → timber.bid, Flowstake, DevStudio, CustomComputer, razu.mov.
+2. “Book a Consultation” → Calendar (Cal.com / Google) with optional Stripe deposit Payment Link.
+3. Limitless Alignment waitlist → email capture; charge later via razu.mov Checkout.
+4. MCP: Calendar + Gmail only unless deposits are collected on this domain.
+
+---
+
 ## Rollout sequence
 
 ```
 [1] Desktop: auth Stripe MCP → timber.bid platform account
 [2] Confirm connect-recommend-plan.md (or adjust open questions)
 [3] Implement Connect on timber.bid codebase (separate repo from renat.ai-2)
-[4] Desktop: auth Google MCPs → wire into renat.ai tool layer
-[5] Optional: standard Billing for renat.ai Pro
-[6] Later companies: DevStudio / CustomComputer standard Stripe; Flowstake crypto-first
+[4] Desktop: auth Google MCPs → wire into renat.ai + razu.mov booking/ops
+[5] razu.mov: Payment Links / Checkout for coaching packages (standard Stripe)
+[6] renatrazumov.com: consult booking + funnel links (Calendar; optional deposit)
+[7] Optional: standard Billing for renat.ai Pro
+[8] Later: DevStudio / CustomComputer standard Stripe; Flowstake crypto-first
 ```
 
 ---
