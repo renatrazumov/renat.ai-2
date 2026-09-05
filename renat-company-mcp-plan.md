@@ -16,7 +16,7 @@ Date: 2026-09-05
 | Company | Model | Payments need | Priority for this agent |
 | --- | --- | --- | --- |
 | **timber.bid** | Marketplace (firewood, tree services) + Pro SaaS | **Stripe Connect** (hold until delivery) + platform Billing for Pro | **P0 — start here** |
-| **renat.ai** | AGI / chat assistant (this repo) | Standard Stripe if you monetize; no multi-party Connect | **P1 — MCP + product, not Connect** |
+| **renat.ai** | **Personal OS** — private command center for all companies + designer lifestyle | Standard Stripe only if you later productize; no Connect | **P1 — OS build** |
 | **razu.mov** | Elite performance & leadership coaching (Providence, RI) | Standard Checkout / Payment Links / Billing for packages — **not Connect** | **P1 — coaching revenue** |
 | **renatrazumov.com** | Personal brand hub (ventures + “Book a Consultation” + Limitless Alignment waitlist) | Usually no Connect; link-outs + simple Checkout/calendar booking | **P2 — hub / funnel** |
 | **Flowstake.com** | Fitness stake / prediction-style | Crypto + possibly fiat rails later | P2 |
@@ -75,18 +75,17 @@ After Stripe MCP is authenticated, next agent steps: list products/customers, ve
 
 ---
 
-## Best plan for renat.ai (P1)
+## Best plan for renat.ai (P1) — Personal OS
 
-This repo is an OpenAI + Supabase + Vite AGI chat app — **not a marketplace**. Do **not** put Stripe Connect here unless renat.ai starts routing money between third parties.
+Full brief: [`renat-ai-os-brief.md`](./renat-ai-os-brief.md)
 
-Recommended product path:
+**Positioning:** private command center for all companies + designer lifestyle — not a public chat demo, not Connect.
 
-1. **MCP-powered assistant** — Gmail + Calendar + Drive as tools behind the chat (user-scoped OAuth), so renat.ai becomes Renat’s personal/ops AGI.
-2. **Monetization (optional)** — if you charge for the assistant, use **standard Stripe Checkout/Billing** on a renat.ai Stripe account (subscriptions or credits). No connected accounts.
-3. **Shared brand / SSO later** — keep timber.bid and renat.ai as separate Netlify/Supabase projects; share design system only when needed.
-4. **Do not block timber.bid** on renat.ai features — Connect marketplace revenue is the higher-stakes payments work.
-
-Netlify note: if you add AI server routes on Netlify, prefer Netlify AI Gateway for model calls; keep Stripe secrets in Netlify env (`Netlify.env.get` in functions).
+1. **Phase 0** — You-only auth, company/lifestyle workspaces, memory, Netlify AI Gateway (no browser API keys).
+2. **Phase 1** — Gmail + Calendar + Drive; morning brief; draft-and-approve actions.
+3. **Phase 2** — Stripe read-only digests per company (start timber.bid); razu.mov coaching pipeline.
+4. **Keep Connect in timber.bid** — renat.ai oversees; it does not host marketplace checkout.
+5. **Productize later** (optional) — founder OS template only after you live on it daily.
 
 ---
 
