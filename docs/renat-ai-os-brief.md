@@ -28,8 +28,8 @@ Each company stays its own product (timber.bid Connect, razu.mov Checkout, etc.)
 
 | Layer | Reality |
 | --- | --- |
-| **This repo (`renat.ai-2`)** | README only — no app source checked in |
-| **Live renat.ai** | Hackathon SPA: React + Vite + Supabase Auth + OpenAI chat (gpt-3.5-era), Netlify |
+| **This repo (`renat.ai-2` → rename to `renat.ai`)** | Canonical source: restored chat shell + OS plans under `docs/` |
+| **Live renat.ai** | Netlify SPA: React + Vite + Supabase Auth + `/api/chat` (AI Gateway / OpenRouter) |
 | **Devpost positioning** | “Personal AGI Assistant” + “What’s next: third-party integrations” — that next step *is* this OS |
 | **Payments / Connect** | None in renat.ai (correct). Connect belongs on timber.bid |
 | **MCP in Cloud Agent** | Stripe / Gmail / Calendar / Drive / Link need desktop auth; GitHub MCP errored |
@@ -268,8 +268,8 @@ While the product is rebuilt:
 
 1. Confirm this OS framing (or adjust: more lifestyle-first vs company-first).  
 2. Desktop-auth Google + Stripe MCPs so agents can operate with live data.  
-3. Restore or import full renat.ai source into this repo (currently README-only).  
-4. Implement Phase 0 (private auth + workspaces + Gateway chat).  
+3. ~~Restore renat.ai source into this repo~~ — done (source-map recovery + `/api/chat`). Rename GitHub repo `renat.ai-2` → `renat.ai`.  
+4. Implement remaining Phase 0 (workspaces + memory + Gateway-only chat hardening).  
 5. Parallel track: timber.bid Connect per `connect-recommend-plan.md` (revenue engine the OS will oversee).
 
 ---
