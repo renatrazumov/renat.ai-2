@@ -1,7 +1,7 @@
 # Renat company MCP + product plan
 
 Owner: Renat Razumov (`renatrazumov@protonmail.com`)  
-Repo context: `renat.ai-2` (AGI assistant scaffold)  
+Repo context: `renat.ai-2` (canonical renat.ai app + OS plans; rename to `renat.ai`)  
 Date: 2026-09-05
 
 ## Verdict
@@ -114,7 +114,7 @@ Personal hub — **not a payment platform**.
 ```
 [1] Desktop: auth Stripe MCP → timber.bid platform account
 [2] Confirm connect-recommend-plan.md (or adjust open questions)
-[3] Implement Connect on timber.bid codebase (separate repo from renat.ai-2)
+[3] Implement Connect on timber.bid codebase (separate repo from renat.ai)
 [4] Desktop: auth Google MCPs → wire into renat.ai + razu.mov booking/ops
 [5] razu.mov: Payment Links / Checkout for coaching packages (standard Stripe)
 [6] renatrazumov.com: consult booking + funnel links (Calendar; optional deposit)
