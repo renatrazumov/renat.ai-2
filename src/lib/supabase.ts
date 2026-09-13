@@ -1,13 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Missing Supabase environment variables');
-}
-
-export const supabase = createClient(supabaseUrl, supabaseKey);
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 export interface Message {
   id: string;
@@ -17,6 +8,30 @@ export interface Message {
   user_id: string;
   conversation_id: string;
 }
+
+let client: SupabaseClient | null = null;
+
+function getClient(): SupabaseClient {
+  if (client) return client;
+
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Missing Supabase environment variables');
+  }
+
+  client = createClient(supabaseUrl, supabaseKey);
+  return client;
+}
+
+/** Lazy proxy so the SPA can boot without env until auth/chat is used. */
+export const supabase = new Proxy({} as SupabaseClient, {
+  get(_target, prop, receiver) {
+    const value = Reflect.get(getClient(), prop, receiver);
+    return typeof value === 'function' ? value.bind(getClient()) : value;
+  },
+});
 
 export async function getMessages(conversationId: string) {
   const { data, error } = await supabase
