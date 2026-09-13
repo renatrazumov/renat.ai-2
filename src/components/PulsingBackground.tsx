@@ -1,6 +1,8 @@
 
+import type { ReactNode } from 'react';
+
 interface PulsingBackgroundProps {
-  children: React.ReactNode;
+  children: ReactNode;
   color?: string;
 }
 
