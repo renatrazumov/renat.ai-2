@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback, type FormEvent } from 'react';
+import { useState, useRef, useEffect, type FormEvent } from 'react';
 import { MessageSquare, Send } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
@@ -30,18 +30,12 @@ export function ChatBot() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const checkAuth = useCallback(async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      navigate('/login', { state: { from: '/' } });
-    }
-  }, [navigate]);
-
   useEffect(() => {
-    checkAuth();
-    
     const loadMessages = async () => {
       try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return;
+
         const savedMessages = await getMessages(conversationId);
         if (savedMessages.length > 0) {
           setMessages(savedMessages.map(msg => ({
@@ -55,7 +49,7 @@ export function ChatBot() {
     };
 
     loadMessages();
-  }, [conversationId, checkAuth]);
+  }, [conversationId]);
 
   // Convert messages to OpenAI format
   const getOpenAIMessages = (msgs: Message[]) => {
@@ -76,6 +70,12 @@ export function ChatBot() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
+
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      navigate('/login', { state: { from: '/' } });
+      return;
+    }
 
     const userMessage = input.trim();
     setInput('');
